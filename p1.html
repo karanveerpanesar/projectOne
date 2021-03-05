@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project 01</title>
+        <link rel="stylesheet" type="text/css" href="p1.css">
+		<!-- An external libary was utilized to make the guitar tuner https://cdn.rawgit.com/citronneur/onlinetuner.co/master/js/onlinetuner.min.js -->
+		<!-- from a free CDN -->
+		<script src="https://cdn.rawgit.com/citronneur/onlinetuner.co/master/js/onlinetuner.min.js"></script>
+		<script>
+			function switch_div(show) {  
+				document.getElementById("show_"+show).style.display = "block";
+				document.getElementById("show_"+((show==1)?2:1)).style.display = "none";
+			}
+			
+		</script>
+    </head>
+    <body>
+		
+        <!--Logo picked up from free PNG -distributing website: https://www.cleanpng.com/png-gibson-les-paul-custom-esp-eclipse-b-c-rich-esp-lt-2232653/download-png.html-->
+        <h1><img src="snakeguitar.png" alt="Snake Strings Logo" width="300px" height="150px"><br>Snake Strings</h1>
+
+		<div class="button" id="myBtn" onclick="switch_div(1);">
+			TUNE GUITAR
+		</div>
+		<div class="button" id="myBtn" onclick="switch_div(2);">
+			PLAY SNAKE
+		</div>
+		  
+		
+		<div class="content hide" id="show_0"></div>
+
+		<div class="content" id="show_1">
+			<h2>Let's tune your baby up first!</h2>
+			<p>Tune your guitar on the standard tuning.
+			For reference, from top to bottom, the strings 
+			go <em>E, A, D, G, B, E</em> </p>
+			<canvas id="guitar-tuner" height="600" width="600" style="border:1px solid red;"></canvas>
+		</div>
+        
+		
+        
+
+		<div class="content hide" id="show_2">
+			<h2>Let's play SNAKE with your Guitar!</h2>
+			<p>The first 4 strings of your guitar (E,A,D,G) can 
+			be used to control the motion of the snake.
+			<ul>
+				<li>E is LEFT</li>
+				<li>A is UP</li>
+				<li>D is RIGHT</li>
+				<li>G is DOWN</li>
+			</ul>
+			<div class="game-box"><canvas id="canvas" width="400" height="400"></canvas></div>
+			<div class="game-info">
+			<p id="game-status"></p>
+			<p id="game-score"></p>
+			<canvas id="displayArea"></canvas>
+		</div>
+        
+    </div>
+    </body>
+    <script type="text/javascript" src="p1.js"></script> 
+
+</html>
