@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #079BB0;
+    
+
+}
+a{
+    color: black;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+
+
+@font-face {
+    font-family: 'MarioFont';
+    src: url('SuperMario256.woff') format('woff'), 
+     url('SuperMario256.ttf') format('truetype'); 
+  }
+.mario-logo{
+    content: '';
+    font-size: 40px;
+    font-family: MarioFont;
+    color: #c62e2e;
+    position: absolute;
+    top: -35px;
+    width: 100px;
+    height: 70px;
+    border-radius: 50%;
+    border: solid 2px black;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mario-hat{
+    content: '';
+    position: absolute;
+    top: -50px;
+    width: 300px;
+    height: 370px;
+    border-top-left-radius: 80%;
+    border-top-right-radius: 80%;
+    transition: 0.5s;
+    border-top: solid 100px #c62e2e;
+    
+}
+.mario-nose{
+    content: '';
+    position: absolute;
+    top: 140px;
+    width: 90px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 2px black;
+    background: #ffbe82;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+}
+.mario-nose:hover{
+    content: '';
+    position: absolute;
+    top: 140px;
+    width: 130px;
+    height: 90px;
+    border-radius: 50%;
+    border: solid 2px black;
+    background: #ffc48c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.2s;
+}
+.mario-moustache{
+    content: '';
+    position: absolute;
+    top: 170px;
+    width: 200px;
+    height: 50px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mario-chin{
+    content: '';
+    position: absolute;
+    top: 240px;
+    width: 100px;
+    height: 30px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 4px black;
+}
+
+.mario-face{
+    position:relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #ffd2a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px black;
+    
+}
+.mario-face::before{
+    content: '';
+    position: absolute;
+    top: 180px;
+    width: 150px;
+    height: 70px;
+    background: #c62e2e;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    border: solid 2px black;
+    
+    transition: 0.5s;
+}
+.mario-face:hover::before{
+    top: 210px;
+    width: 150px;
+    height: 20px;
+    background: #c62e2e;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transition: 0.5s;
+}
+
+.mario-left-eyebrow{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    border-top-right-radius: 80%;
+    border-top-left-radius: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 20px black;
+}
+.mario-right-eyebrow{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 160px;
+    width: 80px;
+    height: 80px;
+    border-top-right-radius: 70%;
+    border-top-left-radius: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 20px black;
+}
+
+.mario-eyes{
+    position: relative;
+    top: -40px;
+    display: flex;
+    
+}
+
+.mario-eyes .mario-eye{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    background: white;
+    margin: 0 15px;
+    
+    /*border-radius: 50%;*/
+}
+
+.mario-eyes .mario-eye::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translate(-50%,-50%);
+    width: 40px;
+    height: 40px;
+    background: #0e9bca;
+    border-radius: 50%;
+}
+
+.mario-left-eye-shut{
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 55px;
+    width: 70px;
+    height: 50px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 4px black;
+}
+.mario-right-eye-shut{
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 170px;
+    width: 70px;
+    height: 50px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 4px black;
+}
+
+.the-class {
+    background: black;
+}

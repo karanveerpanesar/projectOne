@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- 
+References for 581 Project 0
+Changing background color when button clicked https://css-tricks.com/snippets/javascript/random-hex-color/ - random color per click
+onclick - https://www.w3schools.com/jsref/event_onclick.asp
+color-picker used to select the correct colors for Mario https://imagecolorpicker.com/
+Reference to design Mario Button - https://improveyourdrawings.com/2019/02/2-ways-to-draw-super-mario/
+Supermariofont that was used for letter M on Mario’s Cap - https://www.dafont.com/super-mario-256.font
+favicon file - https://www.favicon.cc/?action=icon&file_id=840289
+Sound of rain - https://www.zapsplat.com/?s=heavy+rain&post_type=music&sound-effect-category-id=
+Eyes follow mouse - https://www.youtube.com/watch?v=WqgKe3dcXxg
+
+-->
+<html lang="en">
+    <head>
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Describe this page." />
+        <title>Project 0</title>  
+    </head>
+    <body id="back">
+        <audio id="sleepmusic" src="rain.mp3" preload="auto"></audio>
+        <section>
+            <div id = "newColor" style="cursor:pointer" href="#" onclick="playAudio(), hide(), changeColor()"class="mario-face">
+            <div class="mario-left-eye-shut"></div>
+            <div class="mario-right-eye-shut"></div>
+            <div id="eyes" class="mario-eyes">
+                <div class="mario-eye"></div>
+                <div class="mario-eye"></div>
+            </div>
+            <div class="mario-hat"></div>
+            <div class="mario-logo">M</div>
+            <div class="mario-left-eyebrow"></div>
+            <div class="mario-right-eyebrow"></div>
+
+            <div class="mario-moustache"></div>
+            <div class="mario-chin"></div>
+            <div class="mario-nose"></div>
+        </div>
+    </section>
+
+    
+        <script>
+            function hide() {
+                var x = document.getElementById("eyes");
+                if (x.style.display == "none"){
+                    x.style.display = "flex";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+            function changeColor() {
+                document.getElementById('back').classList.toggle("the-class");
+            }
+            
+            document.querySelector('body').addEventListener('mousemove', eyeball);
+            function eyeball(){
+                var eye = document.querySelectorAll
+                ('.mario-eye');
+                eye.forEach(function(eye){
+                    let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+                    let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+                    let radian = Math.atan2(event.pageX - x, event.pageY - y);
+                    let rot = (radian * (180 / Math.PI) * -1) + 270;
+                    eye.style.transform = "rotate("+ rot + "deg)";
+                })
+            }
+            
+            var music = document.getElementById("sleepmusic");
+            
+            function playAudio() {
+                return music.paused ? music.play() : music.pause();
+            };
+        </script>
+    </body>
+    <footer>
+    </footer>
+<!-- Scripts-->
+</html>
